@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Training</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Form Training Exercise</h1>
+    </header>
+
+    <main>
+        <section>
+            <form id="trainingForm" enctype="multipart/form-data">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="1" max="120">
+                <br>
+                <label for="imageUpload">Upload an Image:</label>
+                <input type="file" id="imageUpload" name="imageUpload" accept="image/*">
+                <br>
+
+                <fieldset class="gender-group">
+                    <legend>Gender:</legend>
+                    <span class="gender-option">
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Male</label>
+                    </span>
+                    <span class="gender-option">
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                    </span>
+                </fieldset>
+
+                <input type="hidden" id="submissionTime" name="submissionTime" value="">
+                <br>
+                <button type="submit">Submit</button>
+                <div id="message"></div>
+                <br>
+            </form>
+            <button type="button" id="getDataButton">Get Data</button>
+
+
+
+
+        </section>
+    </main>
+    <script>
+        document.getElementById('trainingForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            let formData = new FormData(this);
+
+            fetch('server.php', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('message').innerHTML = '<p style="color:green; text-align:center;"><strong>Form submitted successfully!</strong></p>';
+                    document.getElementById('trainingForm').reset();
+                });
+        });
+
+        document.getElementById('getDataButton').addEventListener('click', function (e) {
+            e.preventDefault();
+            window.location.href = 'viewdata.php';
+        });
+    </script>
+
+</body>
+
+</html>

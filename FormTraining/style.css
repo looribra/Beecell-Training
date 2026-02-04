@@ -1,0 +1,100 @@
+section {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+h1{
+    text-align: center;
+    color: #333;
+}
+
+label{
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font-size: large;
+    display: flex;
+    align-content: flex-start;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+
+
+
+button {
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+button:hover {
+    background-color: #3c5a3e;
+}
+
+fieldset {
+   display: flex;
+}
+
+.gender-group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 8px  12px;
+    border: 0;
+    padding: 0;
+}
+span.gender-option{
+    display: flex;
+}
+
+.gender-group .gender-option {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+
+.gender-group .gender-option label {
+    display: flex;
+    margin: 0;
+}
+.gender-group label {
+    display: flex;
+    margin: 0;
+    font-weight: normal;
+}
+
+.gender-group legend {
+    font-weight: bold;
+    margin: 12px 12px 12px 0;
+}
