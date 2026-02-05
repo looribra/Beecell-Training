@@ -20,6 +20,11 @@ label{
     
 }
 
+label.required::after {
+    content: " *";
+    color: #d00;
+ }
+
 input[type="text"],
 input[type="number"],
 input[type="file"],
@@ -97,4 +102,24 @@ span.gender-option{
 .gender-group legend {
     font-weight: bold;
     margin: 12px 12px 12px 0;
+}
+
+@media only screen and (max-width: 600px){
+    section {
+        width: calc(100% - 24px);
+        margin: 0 auto;
+        box-sizing: border-box;
+        background-color: orange;
+    }
+    
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px){
+    section {
+        width: calc(100% - 32px);
+        margin: 0 auto;
+        box-sizing: border-box;
+        background-color: yellow;
+    }
+    
 }
